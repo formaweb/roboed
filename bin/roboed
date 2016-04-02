@@ -2,6 +2,10 @@
 
 require 'robo_ed'
 
+RoboEd.setup do |config|
+  config.strip_tags = true
+end
+
 if ARGV.include?('--say')
   question = (ARGV - ['--say']).join(' ')
   answer = RoboEd.ask(question)
