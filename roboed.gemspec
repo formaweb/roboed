@@ -9,7 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Hugo Demiglio']
   spec.email         = ['hugodemiglio@gmail.com']
   spec.description   = %q{Talk with Robô Ed.}
-  spec.summary       = %q{Talk with Robô Ed.}
+  spec.summary       = %q{Talk with Robô Ed by Petrobras.}
+  spec.homepage      = 'https://github.com/formaweb/roboed'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files lib`.split($/)
