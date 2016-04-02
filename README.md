@@ -1,8 +1,6 @@
 # Roboed
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/roboed`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Now you can talk with our dear friend Robô Ed directly on your ruby application!
 
 ## Installation
 
@@ -22,7 +20,43 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Configuring
+
+```ruby
+require 'robo_ed'
+
+RoboEd.setup do |config|
+  # Robô Ed can answer with some links and HTML tags, by default these tags are removed. You can set strip_tags to false for ignoring this.
+  config.strip_tags = false
+end
+```
+
+### Simple usage
+```ruby
+require 'robo_ed'
+
+RoboEd.ask('Você gosta de ruby?')
+ => "Ruby é o nome de uma pedra preciosa em tom vermelho intenso. Perfeito para uma personagem de livro!"
+```
+
+### Talking with Robô Ed directly on your console
+
+After install robo_ed on your environment, run this script:
+```ruby
+require 'robo_ed'
+
+RoboEd.setup do |options|
+  options.strip_tags = true
+end
+
+loop do
+  print 'Pergunta > '
+  question = gets.strip
+  break if ['sair', 'exit', 'q', 'quit'].include?(question.downcase)
+
+  puts RoboEd.ask(question)
+end
+```
 
 ## Development
 
@@ -32,10 +66,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/roboed.
+Bug reports and pull requests are welcome on GitHub at https://github.com/formaweb/roboed.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
