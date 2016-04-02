@@ -11,7 +11,7 @@ if ARGV.include?('--say')
   answer = RoboEd.ask(question)
 
   puts "🔊\t#{answer}"
-  `say #{answer}`
+  `say "#{answer.gsub('"', '')}"`
 else
   puts RoboEd.ask(ARGV.join(' '))
 end
