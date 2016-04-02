@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'bundler/setup'
 require 'robo_ed'
 
 if ARGV.include?('--say')
