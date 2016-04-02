@@ -1,4 +1,4 @@
-# Roboed
+# Robô Ed
 
 Now you can talk with our dear friend Robô Ed directly on your ruby application!
 
