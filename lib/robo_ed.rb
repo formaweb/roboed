@@ -5,7 +5,7 @@ module RoboEd
   ENDPOINT = 'http://www.ed.conpet.gov.br/mod_perl/bot_gateway.cgi?server=0.0.0.0%3A8085&charset_post=utf-8&charset=utf-8&pure=1&js=0&tst=1&msg='
   TRUE_VALUES = [true, 1, '1', 't', 'T', 'true', 'TRUE']
 
-  @@strip_tags = true
+  @@strip_tags = false
 
   def self.strip_tags
     @@strip_tags

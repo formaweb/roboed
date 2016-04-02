@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'robo_ed'
+
+if ARGV.include?('--say')
+  question = (ARGV - ['--say']).join(' ')
+  answer = RoboEd.ask(question)
+
+  puts "🔊\t#{answer}"
+  `say #{answer}`
+else
+  puts RoboEd.ask(ARGV.join(' '))
+end

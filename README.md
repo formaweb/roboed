@@ -26,8 +26,9 @@ Or install it yourself as:
 require 'robo_ed'
 
 RoboEd.setup do |config|
-  # Robô Ed can answer with some links and HTML tags, by default these tags are removed. You can set strip_tags to false for ignoring this.
-  config.strip_tags = false
+  # Robô Ed can answer with some links and HTML tags, by default these tags are kept.
+  # You can set strip_tags to true for remove this.
+  config.strip_tags = true
 end
 ```
 
@@ -35,34 +36,29 @@ end
 ```ruby
 require 'robo_ed'
 
-RoboEd.ask('Você gosta de ruby?')
+RoboEd.ask('Você gosta de Ruby?')
  => "Ruby é o nome de uma pedra preciosa em tom vermelho intenso. Perfeito para uma personagem de livro!"
 ```
 
 ### Talking with Robô Ed directly on your console
 
-After install robo_ed on your environment, run this script:
-```ruby
-require 'robo_ed'
+After install roboed on your environment, run this script:
 
-RoboEd.setup do |options|
-  options.strip_tags = true
-end
+```console
+$ roboed 'Que horas são?'
+> Pelo meu relógio são 03:23.
+```
 
-loop do
-  print 'Pergunta > '
-  question = gets.strip
-  break if ['sair', 'exit', 'q', 'quit'].include?(question.downcase)
+If you are on Mac OS X, you can ask to say the answer. Just put `--say` whatever you want. xD
 
-  puts RoboEd.ask(question)
-end
+```console
+$ roboed --say 'Que horas são?'
+> 🔊  Pelo meu relógio são 03:23.
 ```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 ## Contributing
 
